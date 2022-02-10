@@ -1,2 +1,2 @@
-# Projectos-de-Estudo
-Projectos feitos durante os estudos
+# Projetos-de-Estudo
+Projetos feitos durante os estudos
