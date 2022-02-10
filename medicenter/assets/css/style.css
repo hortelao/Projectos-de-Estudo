@@ -1,0 +1,27 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    height: 120px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 990px;
+    max-width: 990px;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+
+}
