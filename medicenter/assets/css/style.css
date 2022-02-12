@@ -470,6 +470,10 @@ footer .widget_body p {
     nav ul {
         flex-direction:column;
         display: none;
+        position:absolute;
+        left:0;
+        width:100%;
+        background-color:white;
     }
 
     header {
@@ -484,5 +488,12 @@ footer .widget_body p {
         display: flex;
         flex-direction: column;
         justify-content:space-around;
+
+    }
+
+    @media (min-width:601px) {
+        nav ul {
+            display: flex;
+        }
     }
 }
