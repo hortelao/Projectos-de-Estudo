@@ -114,6 +114,21 @@ p {
     object-fit: cover;
 }
 
+#fonts {
+    display:flex;
+    justify-content: center;
+}
+
+#fonts .ref {
+    text-align: center;
+    padding:15px;
+}
+.ref h2,
+.ref a {
+    color: black;
+}
+
+
 
 
 
