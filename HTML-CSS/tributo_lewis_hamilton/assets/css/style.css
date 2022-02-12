@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding:0;
+    font-family: 'Racing Sans One', cursive;
+    color: white;
+}
+
+.container {
+    display: flex;
+}
+
+.red {
+    width:100%;
+    height:71px;
+    background-color: #e01600;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    align-items: center;
+    color: white;
+}
+
+#shortDescription .container {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+}
+
+#shortDescription h2 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: black;
+}
+
+#shortDescription img {
+    width: 500px;
+}
+
+.personal_info {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+
+.red_red {
+    width:100%;
+    background-color: #e01600;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+
+#short_bio h2 {
+    color: #b9b9bb;
+}
+
+p {
+    font-size: 14px;
+    color: white;
+    margin: 5px;
+}
+
+
+.f1_records a {
+    color: #b9b9bb;
+}
+
+#bio .container {
+    margin: 25px;
+}
+
+
+
+
+#bio h2 {
+    color: black;
+    text-align: center;
+}
+#bio p {
+    color: black;
+    text-align: justify;
+}
+
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.red_red_horizontal {
+    width:100%;
+    background-color: #e01600;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+.img {
+    padding: 30px;
+}
+
+.img img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+
+
+
+footer {
+    padding:5px;
+    height: 30px;
+    background-color: #15151e;
+    text-align: center;
+    justify-content: center;
+}
+
+.dev {
+
+    color: #b9b9bb;
+}
+
+.dev a {
+    text-decoration: none;
+    color: #b9b9bb;
+}
