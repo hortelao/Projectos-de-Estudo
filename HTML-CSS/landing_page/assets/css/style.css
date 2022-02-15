@@ -103,6 +103,7 @@ header {
     background-color: rgb(231, 229, 229);
     border-radius: 5px;
     box-shadow: 4px 4px 10px black;
+
 }
 
 .values_options img {
@@ -118,10 +119,9 @@ header {
 .fast:hover,
 .secure:hover,
 .warranty:hover {
-
     background: linear-gradient(-0deg, rgb(235, 111, 29), #2193FF);
     box-shadow: 4px 4px 10px rgb(4, 4, 104);
-   
+  
 }
 
 #content {
@@ -186,4 +186,21 @@ footer {
 .dev a {
     text-decoration: none;
     color: #AFB4BC;
+}
+
+@media (max-width: 845px) {
+
+.values_options{
+    flex-direction: column;
+}
+
+
+#content .container {
+    flex-direction: column;
+}
+
+.image {
+    padding-bottom:25px;
+}
+
 }
