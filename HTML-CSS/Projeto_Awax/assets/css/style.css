@@ -911,6 +911,7 @@ input[type="text"]:first-child {
 .section-map--info {
     width: 50%;
     padding: 30px;
+    margin-left: 100px;
     background-color: #FFF;
     color: #000;
 }
@@ -925,7 +926,7 @@ input[type="text"]:first-child {
 .section-map--info-item-img {
     width:30px;
     height: 30px;
-    display: inline-flex;
+    display: flex;
     justify-content:center;
     align-items:center;
     padding: 5px;
@@ -937,4 +938,128 @@ input[type="text"]:first-child {
 .section-map--info-item-img img {
     width: 15px;
     height: auto;
+}
+
+
+
+
+.section-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    padding: 10px;
+}
+
+.footer-column {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px;
+    padding: 10px;
+}
+
+.section-social-footer {
+   display: flex;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.twitter-footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #333333;
+    margin-right: 8px;
+}
+
+
+.linkedin-footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #333333;
+    margin-right: 8px;
+}
+
+.facebook-footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #333333;
+    margin-right: 8px;
+}
+
+.googleplus-footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #333333;
+    margin-right: 8px;
+}
+
+.pinterest-footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #333333;
+    margin-right: 8px;
+}
+
+.twitter-footer:hover,
+.linkedin-footer:hover,
+.facebook-footer:hover,
+.googleplus-footer:hover,
+.pinterest-footer:hover {
+    background-color: #B28756;
+}
+
+
+
+.description {
+    color: #999;
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.grey {
+    background-color: #373737;
+    border-radius: 3px;
+}
+
+.box input[type="text"] {
+    margin-right: 0px;
+    text-align: center;
 }
