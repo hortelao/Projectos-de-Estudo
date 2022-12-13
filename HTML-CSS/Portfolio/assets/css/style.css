@@ -1,0 +1,81 @@
+/*
+Colors:
+ECECED - Bright Gray
+3258A0 - Cobalt Blue
+AFACB4 - Silver Foil
+22303C - Gunmetal
+C04660 - Popstar
+
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #22303C;
+}
+
+header {
+    background-color: #AFACB4;
+    height: 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1440px;
+    margin:auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50px;
+}
+
+.menu ul {
+    color: #22303C;
+    display: flex;
+}
+
+.menu li {
+    list-style: none;
+    text-decoration: none;
+    align-items: center;
+    padding: 15px;
+    
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #22303C;
+    font-weight: 600;
+    border-bottom: 3px solid #AFACB4;
+}
+
+.menu li a:hover {
+    border-bottom: 3px solid #3258A0;
+}
+
+
+
+
+.banner {
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+}
+
+.container {
+    width: 1140px;
+    margin: auto;
+}
+
+.banner-title {
+    font-size: 35px;
+    padding-top: 30px;
+}
