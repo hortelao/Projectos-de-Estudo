@@ -65,6 +65,18 @@ p {
 }
 
 
+.menuMobile {
+    display:none;
+    width:30px;
+    height:30px;
+    margin: 10px;
+}
+
+.mm_line {
+    height:3px;
+    background-color:#22303C;
+}
+
 
 
 .banner {
@@ -95,6 +107,7 @@ p {
     font-size: 35px;
     padding-top: 30px;
 }
+
 
 
 
@@ -299,7 +312,6 @@ p {
 
 .projects-grid {
     gap: 30px;
-    width: 100vw;
     max-width: 1140px;
     margin-top: 20px;
     display:flex;
@@ -414,7 +426,8 @@ footer {
     justify-content: center;
     align-items: center;
     grid-template-columns: 1fr;
-    max-width: 90%;
+    
+    max-width: 1140px;
     
 }
 
@@ -439,4 +452,84 @@ footer {
     grid-template-columns: 1fr;
 }
 
+.projects-grid {
+    max-width: 1000px;
+    justify-content: center;
+}
+
+}
+
+
+
+
+@media (max-width: 580px) {
+    .container {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .menu li {
+        font-size: 12px;
+    }
+
+    .menu ul {
+        display:flex;
+    }
+
+    .banner-profile-foto img{
+        max-width: 240px;
+        max-height: 240px;
+        box-shadow: 4px 4px 10px #636264;
+        border-radius: 50%;
+    }
+
+    .projects-grid {
+        max-width: 570px;
+        justify-content: center;
+    }
+    
+}
+
+@media (max-width: 460px) {
+    .container {
+        max-width: 90%;
+        margin: auto;
+    }
+
+  
+
+    .projects-grid {
+        max-width: 310px;
+        justify-content: center;
+    }
+
+    .section-projects--photo {
+        width: 280px;
+    }
+    
+    .section-projects--photoarea {
+        margin:10px;
+        width: 280px;
+        height: 200px;
+        
+    }
+
+    .menu ul {
+        flex-direction:column;
+        display: none;
+        position:absolute;
+        left:0;
+        width:100%;
+        background-color: #22303C;
+    }
+
+    .menuMobile {
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+
+    }
+
+
+    
 }
