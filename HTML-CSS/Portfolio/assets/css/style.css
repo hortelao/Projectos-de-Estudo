@@ -104,10 +104,9 @@ p {
 }
 
 .banner-profile-foto img{
-    width: 340px;
-    height: 340px;
-    border: 2px solid #22303C;
-    box-shadow: 4px 4px #AFACB4;
+    max-width: 340px;
+    max-height: 340px;
+    box-shadow: 4px 4px 10px #636264;
     border-radius: 50%;
 }
 
@@ -137,6 +136,7 @@ p {
     display: flex;
     margin-top: 20px;
     align-items: center;
+    height: 50px;
 }
 
 .linkedin-banner img,
@@ -386,4 +386,57 @@ footer {
     width: 20px;
     height: 20px;
     padding: 10px;
+}
+
+
+
+
+
+
+@media (max-width: 1250px) {
+.container {
+    max-width: 90%;
+    margin: auto;
+}
+
+.banner-bg {
+    grid-template-columns: 1fr;
+}
+.banner-area1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    
+}
+
+.about-me-area1,
+.about-me-area2 {
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+}
+.skill-block {
+    width: 346px;
+}
+
+.education-grid {
+    grid-template-columns: 1fr;
+}
+
 }
