@@ -1,5 +1,5 @@
 class Form {
-
+    items = [];
     method = 'GET';
 
     constructor(container, method, action) {
@@ -7,6 +7,23 @@ class Form {
         this.method = method;
         this.action = action;
     }
+
+    addItem(item) {
+        this.items.push(item);
+    }
+
+    render() {
+        let formElement = document.createElement('form');
+        formElement.setAttribute('method', this.method);
+        formElement.setAttribute('action', this.action);
+
+        for(let i in this.items) {
+            this.items[i].render(formElement);
+        }
+
+        this.container.appendChild(formElement);
+    }
+
 }
 
 
@@ -31,6 +48,15 @@ class Input {
             throw new Error(`Input "${t}" doesn't exists`);
         }
     }
+
+    render(formElement) {
+        let el = document.createElement('input');
+        el.type = this.type;
+        el.name = this.name;
+        el.placeholder = this.label;
+        el.required = this.required;
+        formElement.appendChild(el);
+    }
 }
 
 class Button extends Input {
@@ -38,6 +64,14 @@ class Button extends Input {
         super('', label);
         this.type = 'submit';
     }
+
+    render(formElement) {
+        let el = document.createElement('input');
+        el.type = this.type;
+        el.value = this.label;
+        formElement.appendChild(el);
+    }
+
 }
 
 // Implementação
@@ -54,10 +88,15 @@ let form = new Form('.formArea','POST', 'teste.com');
 let email = new Input('Email', 'Type your email');
 email.type = 'email';
 email.required = true;
+form.addItem(email);
 
 // Password
 let password = new Input('Password', 'Your password');
 password.type = 'password';
+form.addItem(password);
 
 // Botão
-let button = new Button('Enviar');
+let button = new Button('Send');
+form.addItem(button);
+
+form.render();
