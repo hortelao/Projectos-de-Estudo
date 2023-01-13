@@ -99,8 +99,21 @@ c('.pizzaInfo--addButton').addEventListener('click', ()=> {
     closeModal();
 });
 
+c('.menu-openner').addEventListener('click', ()=> {
+    if(cart.length > 0) {
+    c('aside').style.left = '0';
+    }
+});
+
+c('.menu-closer').addEventListener('click', () => {
+    c('aside').style.left = '100vw';
+});
+
 
 function updateCart() {
+
+    c('.menu-openner span').innerHTML = cart.length;
+
     if(cart.length > 0) {
         c('aside').classList.add('show');
         c('.cart').innerHTML = '';
@@ -120,13 +133,13 @@ function updateCart() {
             let pizzaSizeName;
         switch(cart[i].size) {
             case 0:
-                pizzaSizeName = 'Peq';
+                pizzaSizeName = 'S';
                 break;
             case 1:
-                pizzaSizeName = 'Med';
+                pizzaSizeName = 'M';
                 break;
             case 2:
-                pizzaSizeName = 'Gr';
+                pizzaSizeName = 'L';
                 break;
         }
 
@@ -155,12 +168,13 @@ function updateCart() {
         desconto = subtotal * 0.1;
         total = subtotal - desconto;
 
-        c('.subtotal span:last-child').innerHTML = subtotal+' €';
-        c('.desconto span:last-child').innerHTML = desconto+' €';
-        c('.total span:last-child').innerHTML = total+' €';
+        c('.subtotal span:last-child').innerHTML = subtotal.toFixed(2)+' €';
+        c('.desconto span:last-child').innerHTML = desconto.toFixed(2)+' €';
+        c('.total span:last-child').innerHTML = total.toFixed(2)+' €';
 
 
     } else {
         c('aside').classList.remove('show');
+        c('aside').style.left = '100vw';
     }
 };
