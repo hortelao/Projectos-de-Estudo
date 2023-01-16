@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="leftside">
+            <img src="images/financial_data.png" alt="">
+        </div>
+        <div class="rightside">
+            <h1>Create an account</h1>
+
+            <form method="POST" action="register.php" class="validator">
+                <label>
+                    Your name: <br/>
+                    <input type="text" name="name" data-rules="required|min=2">
+                </label>
+                <label>
+                    Your email: <br/>
+                    <input type="text" name="email" data-rules="required|email">
+                </label>
+                <label>
+                    Your password: <br/>
+                    <input type="password" name="password" data-rules="required|min=4">
+                </label>
+                <label>
+                    <input type="submit" name="register">
+                </label>
+            </form>
+            <div>
+                Already registered? <a href="">Sing In</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
