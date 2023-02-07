@@ -26,7 +26,11 @@ if($name && $email && $password && $birthdate) {
     }
 
     if($auth->emailExists($email) === false) {
-        
+
+        $auth->registerUser($name,$email,$password,$birthdate);
+        header("Location:" . $base);
+        exit;
+
     } else {
         $_SESSION['flash'] = 'Email já registado';
         header("Location:" . $base."/signup.php");
