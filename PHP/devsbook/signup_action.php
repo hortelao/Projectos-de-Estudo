@@ -13,14 +13,14 @@ if($name && $email && $password && $birthdate) {
 
     $birthdate = explode('/', $birthdate);
     if(count($birthdate) != 3) {
-        $_SESSION['flash'] = 'Data de nascimento inválida';
+        $_SESSION['flash'] = 'Invalid birthdate';
         header("Location:" . $base."/signup.php");
         exit;
     }
 
     $birthdate = $birthdate[2] . '-' . $birthdate[1] . '-' . $birthdate[0];
     if(strtotime($birthdate) === false) {
-        $_SESSION['flash'] = 'Data de nascimento inválida';
+        $_SESSION['flash'] = 'Invalid birthdate';
         header("Location:" . $base."/signup.php");
         exit;
     }
@@ -32,14 +32,14 @@ if($name && $email && $password && $birthdate) {
         exit;
 
     } else {
-        $_SESSION['flash'] = 'Email já registado';
+        $_SESSION['flash'] = 'Email already exists';
         header("Location:" . $base."/signup.php");
         exit;
     }
 
 
 }
-$_SESSION['flash'] = 'Campos não enviados';
+$_SESSION['flash'] = 'Nothing has been sent';
 header("Location:" . $base."/signup.php");
 exit;
 

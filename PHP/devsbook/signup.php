@@ -26,17 +26,17 @@ require 'config.php';
             }
             ?>
 
-            <input placeholder="Digite seu nome completo" class="input" type="text" name="name" />
+            <input placeholder="Full name" class="input" type="text" name="name" />
             
-            <input placeholder="Digite seu e-mail" class="input" type="email" name="email" />
+            <input placeholder="Email" class="input" type="email" name="email" />
 
-            <input placeholder="Digite sua senha" class="input" type="password" name="password" />
+            <input placeholder="Password" class="input" type="password" name="password" />
 
-            <input placeholder="Data de nascimento (DD/MM/AAAA)" class="input" type="text" name="birthdate" id="birthdate"/>            
+            <input placeholder="Birthdate (DD/MM/YYYY)" class="input" type="text" name="birthdate" id="birthdate"/>            
 
-            <input class="button" type="submit" value="Registar" />
+            <input class="button" type="submit" value="Sign up" />
 
-            <a href="<?=$base;?>/login.php">Já tem conta? Faça login</a>
+            <a href="<?=$base;?>/login.php">Already registered? Login</a>
         </form>
     </section>
 

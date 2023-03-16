@@ -17,8 +17,8 @@ if($email && $password) {
 
 
 }
-$_SESSION['flash'] = 'E-mail e/ou Password Incorretos';
-header("Location:" . $base."/login.php");
+$_SESSION['flash'] = 'E-mail and/or Password Incorrect';
+header("Location:" . $base."login.php");
 exit;
 
 ?>
