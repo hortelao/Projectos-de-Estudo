@@ -32,7 +32,7 @@ if($name && $email && $password && $birthdate) {
         exit;
 
     } else {
-        $_SESSION['flash'] = 'Email already exists';
+        $_SESSION['flash'] = 'Email already registered';
         header("Location:" . $base."/signup.php");
         exit;
     }
