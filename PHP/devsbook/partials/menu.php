@@ -1,3 +1,9 @@
+<?php
+$countDao = new UserRelationDaoMysql($pdo);
+$count = $countDao->countFriends($userInfo->id);
+
+?>
+
 <aside class="mt-10">
             <nav>
                 <a href="<?=$base;?>">
@@ -29,7 +35,7 @@
                             Friends
                         </div>
                         <div class="menu-item-badge">
-                            33
+                            <?=$count;?>
                         </div>
                     </div>
                 </a>

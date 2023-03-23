@@ -25,6 +25,22 @@ class UserRelationDaoMysql implements UserRelationDAO{
             }
         }
         
+        
         return $users;
+    }
+
+    public function countFriends($id) {
+        $count = 0;
+        $sql = $this->pdo->prepare("SELECT user_to FROM userrelations WHERE user_from = :user_from");
+        $sql->bindValue(':user_from', $id);
+        $sql->execute();
+
+        if($sql->rowCount() > 0) {
+            $count = $sql->rowCount();
+    
+        }
+        
+        
+        return $count;
     }
 }
