@@ -13,13 +13,17 @@ $firstName = current(explode(' ', $userInfo->name));
     <header>
         <div class="container">
             <div class="logo">
-                <a href=""><img src="<?=$base;?>/assets/images/devsbook_logo.png" /></a>
+                <a href="<?=$base;?>"><img src="<?=$base;?>/assets/images/devsbook_logo.png" /></a>
             </div>
             <div class="head-side">
                 <div class="head-side-left">
                     <div class="search-area">
                         <form method="GET" action="<?=$base;?>/search.php">
-                            <input type="search" placeholder="Pesquisar" name="s" />
+                        <?php if(isset($searchTerm)): ?>
+                            <input type="search" placeholder="<?=$searchTerm;?>" name="s" />
+                        <?php else: ?>
+                            <input type="search" placeholder="Search" name="s" />
+                        <?php endif; ?>
                         </form>
                     </div>
                 </div>
