@@ -74,9 +74,9 @@ class UserDaoMysql implements UserDAO {
                 return $user;
             }
 
-        } else {
+        } 
             return false;
-        }
+        
     }
 
 
@@ -123,6 +123,7 @@ class UserDaoMysql implements UserDAO {
 
     public function update(User $u) {
         $sql = $this->pdo->prepare("UPDATE users SET
+        name = :name,
         email = :email,
         password = :password,
         birthdate = :birthdate,
@@ -133,6 +134,7 @@ class UserDaoMysql implements UserDAO {
         token = :token
         WHERE id = :id");
 
+        $sql->bindValue(':name', $u->name);
         $sql->bindValue(':email', $u->email);
         $sql->bindValue(':password', $u->password);
         $sql->bindValue(':birthdate', $u->birthdate);
