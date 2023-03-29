@@ -3,6 +3,7 @@
 require_once 'config.php';
 require_once 'models/Auth.php';
 require_once 'dao/PostDaoMysql.php';
+require_once 'dao/UserRelationDaoMysql.php';
 
 
 $auth = new Auth($pdo, $base);
@@ -21,6 +22,7 @@ if($id != $userInfo->id) {
 
 $postDao = new PostDaoMysql($pdo);
 $userDao = new UserDaoMysql($pdo);
+$userRealtionDao = new UserRelationDaoMysql($pdo);
 
 $user = $userDao->findById($id, true);
 if(!$user) {
@@ -38,13 +40,9 @@ $user->ageYears = $dateFrom->diff($dateTo)->y;
 //Get User feed
 $feed = $postDao->getUserFeed($id);
 
+//Verify if I follow
 
-
-/*
-$feed = $postDao->getHomeFeed($userInfo->id);
-*/
-
-
+$isFollowing = $userRealtionDao->isFollowing($userInfo->id, $id);
 
 
 
@@ -72,6 +70,12 @@ require 'partials/menu.php';
                                 <?php endif ?>
                             </div>
                             <div class="profile-info-data row">
+                            <?php if($id != $userInfo->id): ?>
+                            <div class="profile-info-item m-width-20">
+                                    <a href="follow_action.php?id=<?=$id;?>" class="button"><?=(!$isFollowing)?'Follow':'Unfollow'?></a>
+                                </div>
+                                <?php endif; ?>
+
                                 <div class="profile-info-item m-width-20">
                                     <div class="profile-info-item-n"><?=count($user->followers);?></div>
                                     <div class="profile-info-item-s">Followers</div>
