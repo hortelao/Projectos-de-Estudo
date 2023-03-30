@@ -59,34 +59,62 @@ class PostDaoMysql implements PostDAO{
     }
 
 
-    public function getUserFeed($id_user){
-        $array = [];
+    public function getUserFeed($id_user, $page = 1){
+        $array = ['feed' => []];
+        $perPage = 5;        
 
-        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :id_user ORDER BY created_at DESC");
+        
+        $offset = ($page - 1) * $perPage;
+
+        $sql = $this->pdo->prepare("SELECT * FROM posts WHERE id_user = :id_user ORDER BY created_at DESC LIMIT $offset,$perPage");
         $sql->bindValue(':id_user', $id_user);
         $sql->execute();
         if($sql->rowCount() > 0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
             
-            $array = $this->_postListToObject($data, $id_user);
+            $array['feed'] = $this->_postListToObject($data, $id_user);
         }
+
+        $sql = $this->pdo->prepare("SELECT COUNT(*) as c FROM posts WHERE id_user = :id_user");
+        $sql->bindValue(':id_user', $id_user);
+        $sql->execute();
+
+        $totalData = $sql->fetch();
+        $total = $totalData['c'];
+
+        $array['pages'] = ceil($total / $perPage);
+        $array['currentPage'] = $page;
 
         return $array;
     }
 
-    public function getHomeFeed($id_user){
+    public function getHomeFeed($id_user, $page = 1){
         $array = [];
+        $perPage = 5;
+
+        
+        $offset = ($page - 1) * $perPage;
+
         $urDao = new UserRelationDaoMysql($this->pdo);
         $userList = $urDao->getFollowing($id_user);
         $userList[] = $id_user;
 
-        $sql = $this->pdo->query("SELECT * FROM posts WHERE id_user IN (".implode(',', $userList).") ORDER BY created_at DESC");
+        $sql = $this->pdo->query("SELECT * FROM posts WHERE id_user IN (".implode(',', $userList).") ORDER BY created_at DESC LIMIT $offset,$perPage");
 
         if($sql->rowCount() > 0) {
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
             
-            $array = $this->_postListToObject($data, $id_user);
+            $array['feed'] = $this->_postListToObject($data, $id_user);
         }
+
+        //GET total of posts
+        $sql = $this->pdo->query("SELECT COUNT(*) as c FROM posts WHERE id_user IN (".implode(',', $userList).")");
+        $totalData = $sql->fetch();
+        $total = $totalData['c'];
+
+        $array['pages'] = ceil($total / $perPage);
+        $array['currentPage'] = $page;
+
 
         return $array;
     }

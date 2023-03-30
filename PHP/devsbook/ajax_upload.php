@@ -45,7 +45,7 @@ if(isset($_FILES['photo']) && !empty($_FILES['photo']['tmp_name'])) {
                 $image = imagecreatefromjpeg($photo['tmp_name']);
             break;
             case 'image/png':
-                $image = imagecreatefrompng($newCover['tmp_name']);
+                $image = imagecreatefrompng($photo['tmp_name']);
             break;
         }
 

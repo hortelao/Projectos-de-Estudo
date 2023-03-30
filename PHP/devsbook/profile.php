@@ -20,6 +20,13 @@ if($id != $userInfo->id) {
     $activeMenu = '';
 }
 
+//Pagination info's
+$page = intval(filter_input(INPUT_GET, 'p'));
+
+if($page < 1) {
+    $page = 1;
+}
+
 $postDao = new PostDaoMysql($pdo);
 $userDao = new UserDaoMysql($pdo);
 $userRealtionDao = new UserRelationDaoMysql($pdo);
@@ -38,7 +45,10 @@ $user->ageYears = $dateFrom->diff($dateTo)->y;
 
 
 //Get User feed
-$feed = $postDao->getUserFeed($id);
+$info = $postDao->getUserFeed($id, $page);
+$feed = $info['feed'];
+$pages = $info['pages'];
+$currentPage = $info['currentPage'];
 
 //Verify if I follow
 
@@ -206,6 +216,13 @@ require 'partials/menu.php';
                         <?php foreach($feed as $item): ?>
                         <?php require 'partials/feed-item.php'; ?>
                         <?php endforeach; ?>
+
+                        <div class="feed-pagination">
+                        <?php for($i=0; $i<$pages; $i++): ?>
+                            <a class="<?=($i+1 == $currentPage)?'active':''?>" href="<?=$base;?>/profile.php?id=<?=$id;?>&p=<?=$i+1;?>"><?=$i+1;?></a>
+                        <?php endfor; ?>
+                        </div>
+
 
                     <?php else: ?>
                         Nothing has been posted yet...

@@ -9,12 +9,20 @@ $userInfo = $auth->checkToken();
 $activeMenu = 'home';
 
 
+//Pagination info's
+$page = intval(filter_input(INPUT_GET, 'p'));
+
+if($page < 1) {
+    $page = 1;
+}
 
 //Get home feed
 
 $postDao = new PostDaoMysql($pdo);
-$feed = $postDao->getHomeFeed($userInfo->id);
-
+$info = $postDao->getHomeFeed($userInfo->id, $page);
+$feed = $info['feed'];
+$pages = $info['pages'];
+$currentPage = $info['currentPage'];
 
 
 
@@ -36,7 +44,11 @@ require 'partials/menu.php';
             <?php require 'partials/feed-item.php'; ?>
             <?php endforeach; ?>
 
-
+            <div class="feed-pagination">
+            <?php for($i=0; $i<$pages; $i++): ?>
+                <a class="<?=($i+1 == $currentPage)?'active':''?>" href="<?=$base;?>/?p=<?=$i+1;?>"><?=$i+1;?></a>
+            <?php endfor; ?>
+            </div>
 
 
         </div>

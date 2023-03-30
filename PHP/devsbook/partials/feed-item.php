@@ -41,7 +41,6 @@ switch($item->type) {
                 echo nl2br($item->body);    
             break;
             case 'photo':
-                
                 echo '<img src="'.$base.'/media/uploads/'.$item->body.'"/>';
             break;
         }
