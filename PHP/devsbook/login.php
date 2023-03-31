@@ -9,6 +9,7 @@ require 'config.php';
     <title>Login</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
     <link rel="stylesheet" href="<?=$base;?>/assets/css/login.css" />
+    <link rel="icon" href="<?=$base;?>/media/php.ico" type="image/x-icon"/>
 </head>
 <body>
     <header>
