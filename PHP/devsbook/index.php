@@ -62,8 +62,8 @@ require 'partials/menu.php';
                             </div>
                         </div>
                         <div class="box-body">
-                            <a href=""><img src="https://alunos.b7web.com.br/media/courses/php-nivel-1.jpg" /></a>
-                            <a href=""><img src="https://alunos.b7web.com.br/media/courses/laravel-nivel-1.jpg" /></a>
+                            <a href=""><img src="<?=$base;?>/media/ads/php.jpg" /></a>
+                            <a href="https://github.com/hortelao"><img src="<?=$base;?>/media/ads/github_ad.jpg" /></a>
                         </div>
                     </div>
                     <div class="box">

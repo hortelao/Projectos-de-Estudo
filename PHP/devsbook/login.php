@@ -32,8 +32,13 @@ require 'config.php';
 
             <input class="button" type="submit" value="Login" />
 
-            <a href="<?=$base;?>/signup.php">Sign up!</a>
+            <a href="<?=$base;?>/signup.php">Sign up!</a><br/>
+            <br/><hr/></br>For testing purposes you can use the following user to login:<br/>
+            Email: <strong>testuser@test.com</strong> <br/>
+            Password: <strong>1234</strong> <br/>
+            Or, you can create an account.
         </form>
+
     </section>
 </body>
 </html>

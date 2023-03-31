@@ -64,8 +64,9 @@ require 'partials/menu.php';
         <label>
             Work:<br/>
             <input type="text" name="work" value="<?=$userInfo->work?>">
-        </label>
-    <hr/>
+        </label><br/>
+        <?php if($userInfo->id != 2): ?>
+        <hr/>    
         <label>
             New Password:<br/>
             <input type="password" name="password">
@@ -74,6 +75,7 @@ require 'partials/menu.php';
             Repeat New Password:<br/>
             <input type="password" name="password_confirmation">
         </label>
+        <?php endif; ?>
 
         <button class="button">Save</button>
 
