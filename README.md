@@ -1,2 +1,2 @@
-# Projetos-de-Estudo
-Projetos feitos durante os estudos
+# Study Projects
+Project made during the courses, exercices, and experiments.
